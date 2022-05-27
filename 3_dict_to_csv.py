@@ -9,6 +9,7 @@
 2. Запишите содержимое списка словарей в файл в формате csv
 
 """
+import csv
 
 personal_list = [
         {'name': 'Маша', 'age': 25, 'job': 'Scientist'}, 
@@ -21,8 +22,7 @@ def main():
     """
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
-    """
-    import csv
+    """    
 
     with open('export.csv', 'w', encoding='utf-8', newline='') as f:
         fields = ['name', 'age', 'job']

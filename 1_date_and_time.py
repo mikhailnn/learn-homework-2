@@ -27,14 +27,10 @@ def str_2_datetime(date_string):
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """    
-    date_list = (date_string.split()[0]).split('/')
-    date_list[2] += '20'    
-    time_list = date_string.split()[1].split('.')[0].split(':') + [(date_string.split()[1]).split('.')[1]]    
-    datetime_list = date_list + time_list    
-    datetime_list = [int(i) for i in datetime_list]    
-    datetime_object = datetime(datetime_list[2], datetime_list[1], datetime_list[0], datetime_list[3], datetime_list[4], datetime_list[5], datetime_list[6])    
     
-    return datetime_object
+    date_dt = datetime.strptime(date_string, '%m/%d/%y %H:%M:%S.%f')    
+
+    return date_dt
 
 if __name__ == "__main__":
     print_days()
